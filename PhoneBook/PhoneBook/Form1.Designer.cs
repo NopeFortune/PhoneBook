@@ -36,12 +36,12 @@ namespace PhoneBook
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbAdress = new System.Windows.Forms.Label();
             this.lbSearch = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbAdress = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -57,9 +57,9 @@ namespace PhoneBook
             this.lbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbFirstName.Location = new System.Drawing.Point(26, 64);
             this.lbFirstName.Name = "lbFirstName";
-            this.lbFirstName.Size = new System.Drawing.Size(96, 20);
+            this.lbFirstName.Size = new System.Drawing.Size(101, 20);
             this.lbFirstName.TabIndex = 0;
-            this.lbFirstName.Text = "FirstName:";
+            this.lbFirstName.Text = "First Name:";
             // 
             // lbLastName
             // 
@@ -67,9 +67,9 @@ namespace PhoneBook
             this.lbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbLastName.Location = new System.Drawing.Point(26, 111);
             this.lbLastName.Name = "lbLastName";
-            this.lbLastName.Size = new System.Drawing.Size(95, 20);
+            this.lbLastName.Size = new System.Drawing.Size(100, 20);
             this.lbLastName.TabIndex = 1;
-            this.lbLastName.Text = "LastName:";
+            this.lbLastName.Text = "Last Name:";
             // 
             // lbPhone
             // 
@@ -111,78 +111,81 @@ namespace PhoneBook
             this.lbSearch.TabIndex = 5;
             this.lbSearch.Text = "Search:";
             // 
-            // textBox1
+            // tbFirstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 20);
-            this.textBox1.TabIndex = 6;
+            this.tbFirstName.Location = new System.Drawing.Point(144, 64);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(193, 20);
+            this.tbFirstName.TabIndex = 6;
             // 
-            // textBox2
+            // tbLastName
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 20);
-            this.textBox2.TabIndex = 7;
+            this.tbLastName.Location = new System.Drawing.Point(144, 113);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(193, 20);
+            this.tbLastName.TabIndex = 7;
             // 
-            // textBox3
+            // tbPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(144, 167);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 20);
-            this.textBox3.TabIndex = 8;
+            this.tbPhone.Location = new System.Drawing.Point(144, 167);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(193, 20);
+            this.tbPhone.TabIndex = 8;
             // 
-            // textBox4
+            // tbEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(144, 231);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(193, 20);
-            this.textBox4.TabIndex = 9;
+            this.tbEmail.Location = new System.Drawing.Point(144, 233);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(193, 20);
+            this.tbEmail.TabIndex = 9;
             // 
-            // textBox5
+            // tbAdress
             // 
-            this.textBox5.Location = new System.Drawing.Point(144, 299);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(193, 98);
-            this.textBox5.TabIndex = 10;
+            this.tbAdress.Location = new System.Drawing.Point(144, 299);
+            this.tbAdress.Multiline = true;
+            this.tbAdress.Name = "tbAdress";
+            this.tbAdress.Size = new System.Drawing.Size(193, 98);
+            this.tbAdress.TabIndex = 10;
             // 
-            // textBox6
+            // tbSearch
             // 
-            this.textBox6.Location = new System.Drawing.Point(591, 12);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(326, 20);
-            this.textBox6.TabIndex = 11;
+            this.tbSearch.Location = new System.Drawing.Point(591, 12);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(326, 20);
+            this.tbSearch.TabIndex = 11;
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSave.Location = new System.Drawing.Point(12, 420);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 37);
+            this.btnSave.Size = new System.Drawing.Size(87, 37);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDelete.Location = new System.Drawing.Point(116, 420);
+            this.btnDelete.Location = new System.Drawing.Point(131, 420);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 37);
+            this.btnDelete.Size = new System.Drawing.Size(87, 37);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnClear.Location = new System.Drawing.Point(226, 420);
+            this.btnClear.Location = new System.Drawing.Point(250, 420);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 37);
+            this.btnClear.Size = new System.Drawing.Size(87, 37);
             this.btnClear.TabIndex = 14;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // dgvData
             // 
@@ -198,6 +201,7 @@ namespace PhoneBook
             this.dgvData.RowHeadersVisible = false;
             this.dgvData.Size = new System.Drawing.Size(704, 410);
             this.dgvData.TabIndex = 15;
+            this.dgvData.DoubleClick += new System.EventHandler(this.dgvData_DoubleClick);
             // 
             // lbFirstNameAsterisk
             // 
@@ -232,12 +236,12 @@ namespace PhoneBook
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSearch);
+            this.Controls.Add(this.tbAdress);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.tbPhone);
+            this.Controls.Add(this.tbLastName);
+            this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.lbSearch);
             this.Controls.Add(this.lbAdress);
             this.Controls.Add(this.lbEmail);
@@ -262,12 +266,12 @@ namespace PhoneBook
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbAdress;
         private System.Windows.Forms.Label lbSearch;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.TextBox tbPhone;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbAdress;
+        private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
