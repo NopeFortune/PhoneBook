@@ -155,6 +155,7 @@ namespace PhoneBook
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(326, 20);
             this.tbSearch.TabIndex = 11;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // btnSave
             // 

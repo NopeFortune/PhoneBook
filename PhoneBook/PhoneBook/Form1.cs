@@ -110,6 +110,20 @@ namespace PhoneBook
                 btnDelete.Enabled = true;
             }
         }
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            using(SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter("sp_Search", connection);
+                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adapter.SelectCommand.Parameters.AddWithValue("@SearchText", tbSearch.Text);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dgvData.DataSource = dataTable;
+
+            }
+        }
         private void tbFirstName_TextChanged(object sender, EventArgs e)
         {
             if (tbFirstName.Text == "")
