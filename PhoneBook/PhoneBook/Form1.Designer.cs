@@ -46,6 +46,8 @@ namespace PhoneBook
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.lbFirstNameAsterisk = new System.Windows.Forms.Label();
+            this.lbPhoneAsterisk = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +105,7 @@ namespace PhoneBook
             // 
             this.lbSearch.AutoSize = true;
             this.lbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbSearch.Location = new System.Drawing.Point(475, 12);
+            this.lbSearch.Location = new System.Drawing.Point(514, 12);
             this.lbSearch.Name = "lbSearch";
             this.lbSearch.Size = new System.Drawing.Size(71, 20);
             this.lbSearch.TabIndex = 5;
@@ -147,7 +149,7 @@ namespace PhoneBook
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(565, 12);
+            this.textBox6.Location = new System.Drawing.Point(591, 12);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(326, 20);
             this.textBox6.TabIndex = 11;
@@ -184,21 +186,48 @@ namespace PhoneBook
             // 
             // dgvData
             // 
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
             this.dgvData.AllowUserToResizeColumns = false;
             this.dgvData.AllowUserToResizeRows = false;
             this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(343, 47);
+            this.dgvData.Location = new System.Drawing.Point(371, 47);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
+            this.dgvData.RowHeadersVisible = false;
             this.dgvData.Size = new System.Drawing.Size(704, 410);
             this.dgvData.TabIndex = 15;
+            // 
+            // lbFirstNameAsterisk
+            // 
+            this.lbFirstNameAsterisk.AutoSize = true;
+            this.lbFirstNameAsterisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbFirstNameAsterisk.ForeColor = System.Drawing.Color.Red;
+            this.lbFirstNameAsterisk.Location = new System.Drawing.Point(343, 64);
+            this.lbFirstNameAsterisk.Name = "lbFirstNameAsterisk";
+            this.lbFirstNameAsterisk.Size = new System.Drawing.Size(16, 20);
+            this.lbFirstNameAsterisk.TabIndex = 16;
+            this.lbFirstNameAsterisk.Text = "*";
+            // 
+            // lbPhoneAsterisk
+            // 
+            this.lbPhoneAsterisk.AutoSize = true;
+            this.lbPhoneAsterisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbPhoneAsterisk.ForeColor = System.Drawing.Color.Red;
+            this.lbPhoneAsterisk.Location = new System.Drawing.Point(343, 167);
+            this.lbPhoneAsterisk.Name = "lbPhoneAsterisk";
+            this.lbPhoneAsterisk.Size = new System.Drawing.Size(16, 20);
+            this.lbPhoneAsterisk.TabIndex = 17;
+            this.lbPhoneAsterisk.Text = "*";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 485);
+            this.ClientSize = new System.Drawing.Size(1087, 469);
+            this.Controls.Add(this.lbPhoneAsterisk);
+            this.Controls.Add(this.lbFirstNameAsterisk);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
@@ -243,6 +272,8 @@ namespace PhoneBook
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridView dgvData;
+        private System.Windows.Forms.Label lbFirstNameAsterisk;
+        private System.Windows.Forms.Label lbPhoneAsterisk;
     }
 }
 
