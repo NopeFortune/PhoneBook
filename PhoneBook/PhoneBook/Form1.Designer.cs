@@ -117,6 +117,7 @@ namespace PhoneBook
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(193, 20);
             this.tbFirstName.TabIndex = 6;
+            this.tbFirstName.TextChanged += new System.EventHandler(this.tbFirstName_TextChanged);
             // 
             // tbLastName
             // 
@@ -131,6 +132,7 @@ namespace PhoneBook
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(193, 20);
             this.tbPhone.TabIndex = 8;
+            this.tbPhone.TextChanged += new System.EventHandler(this.tbPhone_TextChanged);
             // 
             // tbEmail
             // 

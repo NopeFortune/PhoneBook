@@ -38,7 +38,6 @@ namespace PhoneBook
                 dgvData.DataSource = dataTable;
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (tbFirstName.Text != "" && tbPhone.Text != "")
@@ -109,6 +108,28 @@ namespace PhoneBook
 
                 btnSave.Text = "Update";
                 btnDelete.Enabled = true;
+            }
+        }
+        private void tbFirstName_TextChanged(object sender, EventArgs e)
+        {
+            if (tbFirstName.Text == "")
+            {
+                lbFirstNameAsterisk.Visible = true;
+            }
+            else
+            {
+                lbFirstNameAsterisk.Visible = false;
+            }
+        }
+        private void tbPhone_TextChanged(object sender, EventArgs e)
+        {
+            if(tbPhone.Text == "")
+            {
+                lbPhoneAsterisk.Visible = true;
+            }
+            else
+            {
+                lbPhoneAsterisk.Visible = false;
             }
         }
     }
