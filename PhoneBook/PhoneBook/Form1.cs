@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhoneBook
@@ -38,6 +32,7 @@ namespace PhoneBook
                 dgvData.DataSource = dataTable;
             }
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (tbFirstName.Text != "" && tbPhone.Text != "")
@@ -63,6 +58,7 @@ namespace PhoneBook
             ShowData();
             btnClear_Click(sender, e);
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -77,6 +73,7 @@ namespace PhoneBook
             ShowData();
             btnClear_Click(sender, e);
         }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             tbFirstName.Text = string.Empty;
@@ -97,7 +94,7 @@ namespace PhoneBook
         /// <param name="e"></param>
         private void dgvData_DoubleClick(object sender, EventArgs e)
         {
-            if(dgvData.CurrentRow.Index!=-1)
+            if (dgvData.CurrentRow.Index != -1)
             {
                 Id = Convert.ToInt32(dgvData.CurrentRow.Cells[0].Value.ToString());
                 tbFirstName.Text = dgvData.CurrentRow.Cells[1].Value.ToString();
@@ -110,9 +107,15 @@ namespace PhoneBook
                 btnDelete.Enabled = true;
             }
         }
+
+        /// <summary>
+        /// Событие, которое улавливает изменение текста в tbSearch и выводит в DataGried данные, соответствующие tbSearch.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            using(SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("sp_Search", connection);
@@ -121,9 +124,9 @@ namespace PhoneBook
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 dgvData.DataSource = dataTable;
-
             }
         }
+
         private void tbFirstName_TextChanged(object sender, EventArgs e)
         {
             if (tbFirstName.Text == "")
@@ -135,15 +138,41 @@ namespace PhoneBook
                 lbFirstNameAsterisk.Visible = false;
             }
         }
+
         private void tbPhone_TextChanged(object sender, EventArgs e)
         {
-            if(tbPhone.Text == "")
+            if (tbPhone.Text == "")
             {
                 lbPhoneAsterisk.Visible = true;
             }
             else
             {
                 lbPhoneAsterisk.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Событие при закрытие формы, проверяющее, сохранил ли пользователь свои данные.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (tbFirstName.Text == "" && tbLastName.Text == "" && tbPhone.Text == "" && tbEmail.Text == "" && tbAdress.Text == "")
+            {
+                Application.ExitThread();
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to exit without saving your data?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Application.ExitThread();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }
