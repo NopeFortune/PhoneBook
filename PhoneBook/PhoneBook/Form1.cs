@@ -37,7 +37,7 @@ namespace PhoneBook
             {
                     SqlCommand command = new SqlCommand("sp_AddOrUpdateContact", connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@Id", Id);
+                    //command.Parameters.AddWithValue("@Id", Id);
                     command.Parameters.AddWithValue("@FirstName", tbFirstName.Text.Trim());
                     command.Parameters.AddWithValue("@LastName", tbLastName.Text.Trim());
                     command.Parameters.AddWithValue("@Phone", tbPhone.Text.Trim());
@@ -105,7 +105,6 @@ namespace PhoneBook
         /// <param name="e"></param>
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-                connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("sp_Search", connection);
                 adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 adapter.SelectCommand.Parameters.AddWithValue("@SearchText", tbSearch.Text);
